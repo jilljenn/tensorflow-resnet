@@ -18,7 +18,7 @@ import os.path
 filenames = open('filenames.txt').read().splitlines()
 X = np.load('hashes.npy')
 sim = cosine_similarity(X)
-DEMO = '/Users/jin/Desktop/New Year/resized/IMG_20180104_191930.jpg'
+DEMO = 'data/10360.jpg'
 index = filenames.index(DEMO)
 neighbor_ids = sim[index, :].argsort()[::-1][:10]
 with open('results.html', 'w') as f:
